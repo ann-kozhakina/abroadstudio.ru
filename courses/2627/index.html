@@ -304,12 +304,13 @@ body {
   align-items: center;
   justify-content: center;
   color: rgba(255,255,255,0.7);
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 1;
   transition: background 0.15s, transform 0.35s cubic-bezier(0.22,1,0.36,1);
   flex-shrink: 0;
 }
 .variant-card.open .variant-toggle {
-  transform: rotate(90deg);
+  transform: rotate(180deg);
   background: rgba(255,255,255,0.18);
 }
 
@@ -577,12 +578,13 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--teal-dark);
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 1;
   transition: background 0.15s, transform 0.3s cubic-bezier(0.22,1,0.36,1);
   flex-shrink: 0;
 }
 .course-item.open .course-item-toggle {
-  transform: rotate(90deg);
+  transform: rotate(180deg);
   background: rgba(43,191,191,0.2);
 }
 
@@ -914,7 +916,7 @@ body {
 <!-- ══ MAIN ══ -->
 <main class="main-wrap">
 
-  <div class="section-eyebrow au">Выберите формат обучения</div>
+  <div class="section-eyebrow au">Подробнее про форматы обучения</div>
 
   <!-- ───────────────────────────
        ВАРИАНТ 1
@@ -931,7 +933,7 @@ body {
         <div class="variant-price-label" style="color:rgba(43,191,191,0.7);">в месяц</div>
         <div class="variant-price-amount" style="color:var(--teal);">4 600 ₽</div>
       </div>
-      <div class="variant-toggle">›</div>
+      <div class="variant-toggle">∨</div>
     </div>
 
     <div class="variant-body">
@@ -946,8 +948,6 @@ body {
         </div>
 
         <div class="detail-row">
-          <div class="detail-chip"><span class="chi">📅</span> 1 раз в неделю</div>
-          <div class="detail-chip"><span class="chi">⏱</span> 90 минут · занятие</div>
           <div class="detail-chip"><span class="chi">👤</span> 5–9 человек</div>
           <div class="detail-chip price-chip">
             <div class="price-chip-row"><span class="chi">💳</span><span class="price-chip-main">4 600 ₽ · месяц</span></div>
@@ -977,21 +977,11 @@ body {
         <div class="variant-price-label">в месяц</div>
         <div class="variant-price-amount">от 7 600 ₽</div>
       </div>
-      <div class="variant-toggle">›</div>
+      <div class="variant-toggle">∨</div>
     </div>
 
     <div class="variant-body">
       <div class="variant-body-inner">
-
-        <div class="detail-row">
-          <div class="detail-chip"><span class="chi">📅</span> 2 раза в неделю</div>
-          <div class="detail-chip"><span class="chi">⏱</span> 60 + 90 мин</div>
-          <div class="detail-chip"><span class="chi">👤</span> 4–9 человек</div>
-          <div class="detail-chip price-chip">
-            <div class="price-chip-row"><span class="chi">💳</span><span class="price-chip-main">9 700 ₽</span><span class="price-chip-sep">— 4 чел.</span></div>
-            <div class="price-chip-row" style="margin-top:4px;padding-left:26px;"><span class="price-chip-alt">7 600 ₽</span><span class="price-chip-sep">— 5–9 чел.</span></div>
-          </div>
-        </div>
 
         <div class="schedule-strip">
           <div class="sched-block ge">
@@ -1007,18 +997,21 @@ body {
           </div>
         </div>
 
-        <div class="format-desc">
-          Один час в неделю ребята занимаются General English, полтора часа — спецкурс на выбор.
-          <ul class="format-why-list">
-            <li>Язык можно будет сразу «пощупать» — не только в учебниках, но и в реальных темах</li>
-            <li>Дополнительная практика говорения и аудирования в нативном формате, в живом соприкосновении с языком</li>
-            <li>Новый контекст и интерес — ребята видят, зачем им английский прямо сейчас</li>
-          </ul>
+        <div class="detail-row">
+          <div class="detail-chip"><span class="chi">👤</span> 4–9 человек</div>
+          <div class="detail-chip price-chip">
+            <div class="price-chip-row"><span class="chi">💳</span><span class="price-chip-main">9 700 ₽</span><span class="price-chip-sep">— 4 чел.</span></div>
+            <div class="price-chip-row" style="margin-top:4px;padding-left:26px;"><span class="price-chip-alt">7 600 ₽</span><span class="price-chip-sep">— 5–9 чел.</span></div>
+          </div>
         </div>
 
         <p class="price-note">
           Стоимость зависит от формата: мини-группа (4 чел.) или стандартная (5+). Финальная сумма будет рассчитана после формирования групп.
         </p>
+
+        <div class="format-desc">
+          Один час в неделю ребята занимаются General English, полтора часа — спецкурс на выбор.
+        </div>
 
         <!-- Спецкурсы -->
         <div class="courses-list">
@@ -1033,7 +1026,7 @@ body {
                 <div class="course-item-sub">Большие истории на английском</div>
               </div>
               <div class="teacher-badge">Kate</div>
-              <div class="course-item-toggle">›</div>
+              <div class="course-item-toggle">∨</div>
             </div>
             <div class="course-item-body">
               <div class="course-item-body-inner">
@@ -1086,7 +1079,7 @@ body {
                 <div class="course-item-sub">Путешествуем по миру через английский</div>
               </div>
               <div class="teacher-badge">Nataly</div>
-              <div class="course-item-toggle">›</div>
+              <div class="course-item-toggle">∨</div>
             </div>
             <div class="course-item-body">
               <div class="course-item-body-inner">
