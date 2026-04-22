@@ -328,6 +328,32 @@ body {
   overflow: hidden;
 }
 
+/* ── Format bullet list ── */
+.format-why-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.format-why-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.format-why-list li::before {
+  content: '✦';
+  color: var(--teal);
+  font-size: 10px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
 /* ── Schedule strip ── */
 .schedule-strip {
   display: flex;
@@ -433,7 +459,7 @@ body {
 
 /* ── Description text (v1 format note) ── */
 .format-desc {
-  margin: 16px 28px 24px;
+  margin: 16px 28px 12px;
   font-size: 15px;
   font-weight: 500;
   color: var(--text-muted);
@@ -802,7 +828,7 @@ body {
   .site-footer { padding: 24px 20px; }
   .variant-num { writing-mode: horizontal-tb; transform: none; font-size: 9px; }
   .form-section { margin-top: 40px; padding-top: 36px; }
-  .form-iframe-outer iframe { height: 600px; }
+  .form-iframe-outer iframe { height: 560px; }
 }
 </style>
 </head>
@@ -835,15 +861,6 @@ body {
         И то, и другое абсолютно нормально. Чем старше ребята, тем ярче проявляются эти различия.<br><br>
         Поэтому на следующий год мы предлагаем вам два варианта — чтобы каждый нашёл то, что подходит именно ему.
       </p>
-      <div class="hero-why au au3">
-        <div class="hero-why-title">Почему это важно?</div>
-        <ul class="hero-why-list">
-          <li>Поддержание накопленных навыков на высоком уровне — привычный ритм и комфортный темп занятий</li>
-          <li>Язык можно будет сразу «пощупать» — не только в учебниках, но и в реальных темах</li>
-          <li>Дополнительная практика говорения и аудирования в нативном формате, в живом соприкосновении с языком</li>
-          <li>Новый контекст и интерес — ребята видят, зачем им английский прямо сейчас</li>
-        </ul>
-      </div>
     </div>
   </div>
 
@@ -893,7 +910,7 @@ body {
         </div>
 
         <div class="format-desc">
-          Продолжение знакомого формата General English в привычном ритме — с учётом всего накопленного опыта вашего ребёнка и обновлёнными материалами.
+          Продолжение знакомого формата General English в привычном ритме. Поддержание накопленных навыков на высоком уровне — комфортный темп занятий с учётом опыта вашего ребёнка.
         </div>
 
       </div>
@@ -936,7 +953,12 @@ body {
         </p>
 
         <div class="format-desc">
-          Один час в неделю — General English. Полтора часа в неделю ребята уделяют спецкурсу на выбор.
+          Один час в неделю ребята занимаются General English, полтора часа — спецкурс на выбор.
+          <ul class="format-why-list">
+            <li>Язык можно будет сразу «пощупать» — не только в учебниках, но и в реальных темах</li>
+            <li>Дополнительная практика говорения и аудирования в нативном формате, в живом соприкосновении с языком</li>
+            <li>Новый контекст и интерес — ребята видят, зачем им английский прямо сейчас</li>
+          </ul>
         </div>
 
         <div class="schedule-strip">
