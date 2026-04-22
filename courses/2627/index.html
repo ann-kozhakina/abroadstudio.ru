@@ -761,6 +761,39 @@ body {
   line-height: 1.75;
 }
 
+/* ══ STICKY CTA ══ */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bordeaux);
+  color: #fff;
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 13px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  white-space: nowrap;
+}
+.sticky-cta.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (max-width: 640px) {
+  .sticky-cta {
+    display: block;
+  }
+}
+
 /* ══ FOOTER ══ */
 .site-footer {
   background: var(--bordeaux-dark);
@@ -1009,6 +1042,13 @@ body {
                   Берём классическую или современную книгу на английском, читаем вместе (часть на уроке, часть дома) и обсуждаем. Мы слушаем аудиокнигу параллельно с текстом, смотрим фрагменты киноадаптаций, разбираем новые слова. Ребёнок понимает: английский живёт не только в учебнике — его можно читать в книгах, слышать в фильмах.
                 </p>
 
+                <div class="course-video-wrap">
+                  <div class="course-video-label">Видео о курсе</div>
+                  <div class="video-ratio">
+                    <iframe src="https://rutube.ru/play/embed/e57d57eff76bca08d3ad77d019e7e967" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                  </div>
+                </div>
+
                 <div class="course-sections">
                   <div>
                     <div class="course-section-title">На уроке</div>
@@ -1033,13 +1073,6 @@ body {
                   <strong>Результат:</strong> ребёнок начнёт читать книги на английском без страха, услышит живую речь актёров в оригинале, сможет смотреть фильмы без перевода.
                 </div>
 
-                <div class="course-video-wrap">
-                  <div class="course-video-label">Видео о курсе</div>
-                  <div class="video-ratio">
-                    <iframe src="https://rutube.ru/play/embed/e57d57eff76bca08d3ad77d019e7e967" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                  </div>
-                </div>
-
               </div>
             </div>
           </div>
@@ -1061,6 +1094,13 @@ body {
                 <p class="course-item-desc">
                   Мы берём одну страну в неделю и весь час разбираемся, как там живут люди. История, культура, быт, политика, природа, еда, знаменитые люди — всё это помогает ребятам не только учить язык, но и по-настоящему узнавать мир. Занятия живые и практические: смотрим видео из местных новостей, обсуждаем цены на жизнь, слушаем интервью с жителями.
                 </p>
+
+                <div class="course-video-wrap">
+                  <div class="course-video-label">Видео о курсе</div>
+                  <div class="video-ratio">
+                    <iframe src="https://rutube.ru/play/embed/a52ecbb61b3d50e92f688d19f528777e/?p=VB-Ue27gi2cgNrgg6GqS3g" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                  </div>
+                </div>
 
                 <div class="course-sections">
                   <div>
@@ -1086,13 +1126,6 @@ body {
                   <strong>Результат:</strong> ребёнок научится говорить о странах уверенно, понимать культурные различия, слышать живую речь. Язык станет окном в мир, а не просто упражнениями в учебнике.
                 </div>
 
-                <div class="course-video-wrap">
-                  <div class="course-video-label">Видео о курсе</div>
-                  <div class="video-ratio">
-                    <iframe src="https://rutube.ru/play/embed/a52ecbb61b3d50e92f688d19f528777e/?p=VB-Ue27gi2cgNrgg6GqS3g" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                  </div>
-                </div>
-
               </div>
             </div>
           </div>
@@ -1104,7 +1137,7 @@ body {
   </div>
 
   <!-- ══ ФОРМА ══ -->
-  <section class="form-section au">
+  <section class="form-section au" id="form-section">
     <div class="section-eyebrow">Продолжение обучения в следующем году</div>
 
     <div class="form-iframe-outer">
@@ -1122,6 +1155,9 @@ body {
   </p>
 </footer>
 
+<!-- Sticky CTA (mobile only) -->
+<a class="sticky-cta" href="#form-section">Перейти к форме →</a>
+
 <script>
 function toggleVariant(id) {
   document.getElementById(id).classList.toggle('open');
@@ -1129,6 +1165,30 @@ function toggleVariant(id) {
 function toggleCourse(id) {
   document.getElementById(id).classList.toggle('open');
 }
+
+// On mobile: collapse both variant cards by default
+if (window.innerWidth <= 640) {
+  document.querySelectorAll('.variant-card').forEach(function(c) {
+    c.classList.remove('open');
+  });
+}
+
+// Sticky CTA: show after hero scrolls out of view
+(function() {
+  var cta = document.querySelector('.sticky-cta');
+  var hero = document.querySelector('.hero');
+  if (!cta || !hero) return;
+  function updateCta() {
+    var heroBottom = hero.getBoundingClientRect().bottom;
+    if (heroBottom < 0) {
+      cta.classList.add('visible');
+    } else {
+      cta.classList.remove('visible');
+    }
+  }
+  window.addEventListener('scroll', updateCta, { passive: true });
+  updateCta();
+})();
 </script>
 </body>
 </html>
