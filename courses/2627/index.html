@@ -817,8 +817,20 @@ body {
     max-width: calc(50% - 6px);
     letter-spacing: 0.01em;
   }
+  /* плашка цены — на всю ширину на мобильном */
+  .detail-chip.price-chip {
+    flex: 1 1 100%;
+    max-width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .price-chip-row { flex: 1; }
   .detail-chip .chi { font-size: 14px; }
   .variant-name { letter-spacing: 0.01em; }
+  /* шапка курса — меньше gap чтобы стрелка не выпадала */
+  .course-item-header { gap: 8px; padding: 14px 14px; }
   .format-desc { margin: 14px 18px 20px; }
   .courses-list { padding: 16px 18px 20px; }
   .course-item-desc { padding: 14px 16px 0; }
@@ -943,14 +955,24 @@ body {
           <div class="detail-chip"><span class="chi">⏱</span> 60 + 90 мин</div>
           <div class="detail-chip"><span class="chi">👤</span> 4–9 человек</div>
           <div class="detail-chip price-chip">
-            <div class="price-chip-row"><span class="chi">💳</span><span class="price-chip-main">9 700 ₽</span><span class="price-chip-sep" style="font-size:11px;opacity:0.7;">— 4 чел.</span></div>
-            <div class="price-chip-row" style="margin-top:4px;"><span class="chi" style="opacity:0;">💳</span><span class="price-chip-alt">7 600 ₽</span><span class="price-chip-sep" style="font-size:11px;opacity:0.7;">— 5–9 чел.</span></div>
+            <div class="price-chip-row"><span class="chi">💳</span><span class="price-chip-main">9 700 ₽</span><span class="price-chip-sep">— 4 чел.</span></div>
+            <div class="price-chip-row" style="margin-top:4px;padding-left:26px;"><span class="price-chip-alt">7 600 ₽</span><span class="price-chip-sep">— 5–9 чел.</span></div>
           </div>
         </div>
 
-        <p class="price-note">
-          Стоимость зависит от формата: мини-группа (4 чел.) или стандартная (5+). Финальная сумма будет рассчитана после формирования групп.
-        </p>
+        <div class="schedule-strip">
+          <div class="sched-block ge">
+            <div class="sched-block-label">General English</div>
+            <div class="sched-block-name">Групповые занятия</div>
+            <div class="sched-block-time">60 минут · 1 раз в неделю</div>
+          </div>
+          <div class="sched-plus">+</div>
+          <div class="sched-block spec">
+            <div class="sched-block-label">Спецкурс на выбор</div>
+            <div class="sched-block-name">Читательский клуб<br>или Страноведение</div>
+            <div class="sched-block-time">90 минут · 1 раз в неделю</div>
+          </div>
+        </div>
 
         <div class="format-desc">
           Один час в неделю ребята занимаются General English, полтора часа — спецкурс на выбор.
@@ -961,19 +983,9 @@ body {
           </ul>
         </div>
 
-        <div class="schedule-strip">
-          <div class="sched-block ge">
-            <div class="sched-block-label">General English</div>
-            <div class="sched-block-name">Групповые занятия</div>
-            <div class="sched-block-time">60 минут · 1 раз в неделю</div>
-          </div>
-          <div class="sched-plus">+</div>
-          <div class="sched-block spec" style="text-align:center;">
-            <div class="sched-block-label">Спецкурс на выбор</div>
-            <div class="sched-block-name">Читательский клуб<br>или Страноведение</div>
-            <div class="sched-block-time">90 минут · 1 раз в неделю</div>
-          </div>
-        </div>
+        <p class="price-note">
+          Стоимость зависит от формата: мини-группа (4 чел.) или стандартная (5+). Финальная сумма будет рассчитана после формирования групп.
+        </p>
 
         <!-- Спецкурсы -->
         <div class="courses-list">
