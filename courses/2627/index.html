@@ -36,6 +36,10 @@ body {
 /* ══ HEADER ══ */
 .site-header {
   background: var(--bordeaux-dark);
+}
+.header-inner {
+  max-width: 860px;
+  margin: 0 auto;
   padding: 20px 48px;
   display: flex;
   align-items: center;
@@ -47,14 +51,6 @@ body {
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.08em;
-}
-.header-logo span {
-  display: block;
-  font-size: 10px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: 0.06em;
-  margin-top: 3px;
 }
 .header-year {
   font-family: var(--font-head);
@@ -82,7 +78,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center top;
   display: block;
 }
 .hero-photo-placeholder {
@@ -907,10 +903,10 @@ body {
 
 /* ══ RESPONSIVE ══ */
 @media (max-width: 640px) {
-  .site-header { padding: 16px 20px; }
+  .header-inner { padding: 16px 20px; }
   .hero { min-height: 420px; }
   .hero-text { padding: 0 0 32px; }
-  .hero-photo img { object-position: center 15%; }
+  .hero-photo img { object-position: center top; }
   .hero-inner { padding: 0 20px; }
   .main-wrap { padding: 32px 20px 60px; }
   .variant-header { padding: 18px 18px; gap: 10px; }
@@ -959,11 +955,10 @@ body {
 
 <!-- ══ HEADER ══ -->
 <header class="site-header">
-  <div class="header-logo">
-    AB ROAD STUDIO
-    <span>Английский язык</span>
+  <div class="header-inner">
+    <div class="header-logo">AB ROAD STUDIO</div>
+    <div class="header-year">2025 / 2026</div>
   </div>
-  <div class="header-year">2025 / 2026</div>
 </header>
 
 <!-- ══ HERO ══ -->
