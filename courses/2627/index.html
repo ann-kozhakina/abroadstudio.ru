@@ -70,14 +70,14 @@ body {
 }
 .hero-photo {
   width: 100%;
-  max-height: 380px;
+  max-height: 240px;
   overflow: hidden;
   position: relative;
   background: #2A0A1A;
 }
 .hero-photo img {
   width: 100%;
-  height: 380px;
+  height: 240px;
   object-fit: cover;
   object-position: center center;
   display: block;
@@ -688,6 +688,26 @@ body {
 .form-header {
   margin-bottom: 28px;
 }
+.form-iframe-outer {
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(26,18,25,0.06);
+}
+.form-iframe-clip {
+  /* clip синюю полосу сверху (~10px) и дисклеймер снизу (~56px) */
+  height: 834px;
+  overflow: hidden;
+  position: relative;
+}
+.form-iframe-clip iframe {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  border: none;
+}
 .form-title {
   font-family: var(--font-head);
   font-size: clamp(16px, 2vw, 20px);
@@ -765,9 +785,9 @@ body {
 @media (max-width: 640px) {
   .site-header { padding: 16px 20px; }
   .hero-text { padding: 28px 0 36px; }
-  .hero-photo { max-height: 260px; }
-  .hero-photo img { height: 260px; object-position: center 15%; }
-  .hero-photo-placeholder { height: 200px; }
+  .hero-photo { max-height: 180px; }
+  .hero-photo img { height: 180px; object-position: center center; }
+  .hero-photo-placeholder { height: 160px; }
   .hero-inner { padding: 0 20px; }
   .main-wrap { padding: 32px 20px 60px; }
   .variant-header { padding: 18px 18px; gap: 10px; }
@@ -1063,14 +1083,11 @@ body {
       <strong>Необходимо ответить до 9 мая.</strong></p>
     </div>
 
-    <!--
-      КАК ДОБАВИТЬ ФОРМУ:
-      1. Создайте форму в Яндекс.Формах
-      2. «Поделиться» → «Встроить» → скопируйте iframe
-      3. Замените блок form-ph на:
-         <iframe src="https://forms.yandex.ru/u/XXXX/iframe/" frameborder="0" width="100%" height="700"></iframe>
-    -->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKe6b57gDqjgfhJAYgzkS1mPFAQsdJDpMFGV9SApxhO8zhAg/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" style="border-radius:14px; border: 1px solid var(--border);">Загрузка…</iframe>
+    <div class="form-iframe-outer">
+      <div class="form-iframe-clip">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKe6b57gDqjgfhJAYgzkS1mPFAQsdJDpMFGV9SApxhO8zhAg/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+      </div>
+    </div>
 
     <div class="form-closing">
       Если у вас есть вопросы — пожалуйста, переходите в личные сообщения. Мы всегда готовы ответить на ваш вопрос.
