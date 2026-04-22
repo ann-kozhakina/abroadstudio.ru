@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AB Road Studio — Следующий учебный год</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%235C1A3A'/><text x='16' y='23' text-anchor='middle' font-family='Arial Black,sans-serif' font-size='13' font-weight='900' fill='white'>AB</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -78,7 +79,7 @@ body {
   width: 100%;
   height: 380px;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center center;
   display: block;
 }
 .hero-photo-placeholder {
@@ -942,62 +943,9 @@ body {
         <div class="courses-list">
           <div class="courses-list-label">Спецкурс на выбор</div>
 
-          <!-- Страноведение -->
+          <!-- Читательский клуб -->
           <div class="course-item" id="c1">
             <div class="course-item-header" onclick="toggleCourse('c1')">
-              <div class="course-item-icon">🌍</div>
-              <div class="course-item-title-wrap">
-                <div class="course-item-title">Страноведение</div>
-                <div class="course-item-sub">Путешествуем по миру через английский</div>
-                <div class="teacher-badge">Natalie</div>
-              </div>
-              <div class="course-item-toggle">›</div>
-            </div>
-            <div class="course-item-body">
-              <div class="course-item-body-inner">
-
-                <p class="course-item-desc">
-                  Мы берём одну страну в неделю и весь час разбираемся, как там живут люди. История, культура, быт, политика, природа, еда, знаменитые люди — всё это помогает ребятам не только учить язык, но и по-настоящему узнавать мир. Занятия живые и практические: смотрим видео из местных новостей, обсуждаем цены на жизнь, слушаем интервью с жителями.
-                </p>
-
-                <div class="course-sections">
-                  <div>
-                    <div class="course-section-title">На уроке</div>
-                    <ul class="course-section-list">
-                      <li>Ищем страну на карте, вспоминаем географию и историю</li>
-                      <li>Смотрим видео о жизни в столице, интервью с местными</li>
-                      <li>Обсуждаем культурные различия, традиции, правила этикета</li>
-                      <li>Пробуем готовить традиционные блюда (разбираем рецепт на английском)</li>
-                      <li>Берём интервью у одноклассника — роли туриста и местного жителя</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <div class="course-section-title">Домашнее задание</div>
-                    <ul class="course-section-list">
-                      <li>До урока: подготовить информацию о стране (где находится, знаменитости)</li>
-                      <li>После урока: эссе о плюсах и минусах жизни в этой стране</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="course-result-box">
-                  <strong>Результат:</strong> ребёнок научится говорить о странах уверенно, понимать культурные различия, слышать живую речь. Язык станет окном в мир, а не просто упражнениями в учебнике.
-                </div>
-
-                <div class="course-video-wrap">
-                  <div class="course-video-label">Видео о курсе</div>
-                  <div class="video-ratio">
-                    <iframe src="https://rutube.ru/play/embed/a52ecbb61b3d50e92f688d19f528777e/?p=VB-Ue27gi2cgNrgg6GqS3g" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <!-- Читательский клуб -->
-          <div class="course-item" id="c2">
-            <div class="course-item-header" onclick="toggleCourse('c2')">
               <div class="course-item-icon">📖</div>
               <div class="course-item-title-wrap">
                 <div class="course-item-title">Читательский клуб</div>
@@ -1041,6 +989,59 @@ body {
                   <div class="course-video-label">Видео о курсе</div>
                   <div class="video-ratio">
                     <iframe src="https://rutube.ru/play/embed/e57d57eff76bca08d3ad77d019e7e967" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Страноведение -->
+          <div class="course-item" id="c2">
+            <div class="course-item-header" onclick="toggleCourse('c2')">
+              <div class="course-item-icon">🌍</div>
+              <div class="course-item-title-wrap">
+                <div class="course-item-title">Страноведение</div>
+                <div class="course-item-sub">Путешествуем по миру через английский</div>
+                <div class="teacher-badge">Natalie</div>
+              </div>
+              <div class="course-item-toggle">›</div>
+            </div>
+            <div class="course-item-body">
+              <div class="course-item-body-inner">
+
+                <p class="course-item-desc">
+                  Мы берём одну страну в неделю и весь час разбираемся, как там живут люди. История, культура, быт, политика, природа, еда, знаменитые люди — всё это помогает ребятам не только учить язык, но и по-настоящему узнавать мир. Занятия живые и практические: смотрим видео из местных новостей, обсуждаем цены на жизнь, слушаем интервью с жителями.
+                </p>
+
+                <div class="course-sections">
+                  <div>
+                    <div class="course-section-title">На уроке</div>
+                    <ul class="course-section-list">
+                      <li>Ищем страну на карте, вспоминаем географию и историю</li>
+                      <li>Смотрим видео о жизни в столице, интервью с местными</li>
+                      <li>Обсуждаем культурные различия, традиции, правила этикета</li>
+                      <li>Пробуем готовить традиционные блюда (разбираем рецепт на английском)</li>
+                      <li>Берём интервью у одноклассника — роли туриста и местного жителя</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div class="course-section-title">Домашнее задание</div>
+                    <ul class="course-section-list">
+                      <li>До урока: подготовить информацию о стране (где находится, знаменитости)</li>
+                      <li>После урока: эссе о плюсах и минусах жизни в этой стране</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="course-result-box">
+                  <strong>Результат:</strong> ребёнок научится говорить о странах уверенно, понимать культурные различия, слышать живую речь. Язык станет окном в мир, а не просто упражнениями в учебнике.
+                </div>
+
+                <div class="course-video-wrap">
+                  <div class="course-video-label">Видео о курсе</div>
+                  <div class="video-ratio">
+                    <iframe src="https://rutube.ru/play/embed/a52ecbb61b3d50e92f688d19f528777e/?p=VB-Ue27gi2cgNrgg6GqS3g" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                   </div>
                 </div>
 
