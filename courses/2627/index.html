@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AB Road Studio — Следующий учебный год</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bordeaux: #5C1A3A;
+  --bordeaux-dark: #3D0E25;
+  --bordeaux-light: #7A2250;
+  --teal: #2BBFBF;
+  --teal-dark: #1A9090;
+  --teal-light: rgba(43,191,191,0.12);
+  --bg: #F7F5F2;
+  --white: #FFFFFF;
+  --text: #1A1219;
+  --text-muted: #6B5A65;
+  --text-hint: #A892A0;
+  --border: rgba(26,18,25,0.1);
+  --purple: #7B35C8;
+  --purple-light: rgba(123,53,200,0.1);
+  --font-head: 'Unbounded', sans-serif;
+  --font-body: 'Mulish', sans-serif;
+}
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ══ HEADER ══ */
+.site-header {
+  background: var(--bordeaux-dark);
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-logo {
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.08em;
+}
+.header-logo span {
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.06em;
+  margin-top: 3px;
+}
+.header-year {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: 0.1em;
+}
+
+/* ══ HERO ══ */
+.hero {
+  background: var(--bordeaux-dark);
+}
+.hero-photo {
+  width: 100%;
+  max-height: 380px;
+  overflow: hidden;
+  position: relative;
+  background: #2A0A1A;
+}
+.hero-photo img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+}
+.hero-photo-placeholder {
+  height: 340px;
+  background: #E8E5E2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(26,18,25,0.25);
+  font-family: var(--font-head);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+.hero-photo-placeholder span { font-size: 28px; opacity: 0.4; }
+.hero-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 55%, var(--bordeaux-dark) 100%);
+}
+.hero-text {
+  background: var(--bordeaux);
+  background-image: radial-gradient(ellipse at 85% 0%, rgba(43,191,191,0.18) 0%, transparent 55%);
+  padding: 40px 0 52px;
+}
+.hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.hero-label {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: rgba(43,191,191,0.12);
+  border: 1px solid rgba(43,191,191,0.25);
+  border-radius: 20px;
+  padding: 5px 14px;
+  margin-bottom: 18px;
+}
+.hero-title {
+  font-family: var(--font-head);
+  font-size: clamp(22px, 3vw, 38px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+.hero-title em {
+  font-style: normal;
+  color: var(--teal);
+}
+.hero-body-text {
+  font-size: clamp(13px, 1.5vw, 15px);
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.hero-body-text strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+
+/* Why block */
+.hero-why {
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(43,191,191,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+}
+.hero-why-title {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 14px;
+}
+.hero-why-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.hero-why-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.55;
+}
+.hero-why-list li::before {
+  content: '✦';
+  color: var(--teal);
+  font-size: 10px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* ══ MAIN WRAP ══ */
+.main-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 48px 80px;
+}
+.section-eyebrow {
+  font-family: var(--font-head);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-hint);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ══ VARIANT CARD ══ */
+.variant-card {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 20px rgba(26,18,25,0.08);
+  transition: box-shadow 0.2s;
+}
+.variant-card:hover {
+  box-shadow: 0 4px 32px rgba(26,18,25,0.13);
+}
+
+/* Card header — clickable */
+.variant-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 28px;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.15s;
+}
+.variant-header:active { opacity: 0.85; }
+
+/* Variant 1 — bordeaux */
+.variant-card.v1 .variant-header {
+  background: var(--bordeaux);
+}
+/* Variant 2 — darker/richer, "recommended" */
+.variant-card.v2 .variant-header {
+  background: linear-gradient(120deg, var(--bordeaux-dark) 0%, var(--bordeaux-light) 100%);
+}
+
+.variant-num {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.variant-title-col {}
+.variant-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 5px;
+}
+.variant-name {
+  font-family: var(--font-head);
+  font-size: clamp(15px, 2vw, 20px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.variant-card.v2 .variant-tag { color: var(--teal); opacity: 0.85; }
+
+.variant-price-col {
+  text-align: right;
+  flex-shrink: 0;
+}
+.variant-price-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.variant-price-amount {
+  font-family: var(--font-head);
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.variant-price-amount sub {
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.55;
+  vertical-align: baseline;
+}
+.variant-card.v2 .variant-price-amount { color: var(--teal); }
+
+.variant-toggle {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.7);
+  font-size: 18px;
+  transition: background 0.15s, transform 0.35s cubic-bezier(0.22,1,0.36,1);
+  flex-shrink: 0;
+}
+.variant-card.open .variant-toggle {
+  transform: rotate(90deg);
+  background: rgba(255,255,255,0.18);
+}
+
+/* ── Card body (collapsible) ── */
+.variant-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.22,1,0.36,1);
+  background: var(--white);
+}
+.variant-card.open .variant-body {
+  grid-template-rows: 1fr;
+}
+.variant-body-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ── Schedule strip ── */
+.schedule-strip {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  padding: 28px 28px 0;
+}
+.sched-block {
+  flex: 1;
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.sched-block.ge {
+  background: rgba(92,26,58,0.07);
+  border: 1.5px solid rgba(92,26,58,0.15);
+}
+.sched-block.spec {
+  background: var(--teal-light);
+  border: 1.5px solid rgba(43,191,191,0.25);
+  margin-left: 10px;
+}
+.sched-block-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-hint);
+}
+.sched-block.ge .sched-block-label { color: var(--bordeaux); opacity: 0.7; }
+.sched-block.spec .sched-block-label { color: var(--teal-dark); }
+.sched-block-name {
+  font-family: var(--font-head);
+  font-size: clamp(12px, 1.4vw, 14px);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+.sched-block-time {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 2px;
+}
+.sched-plus {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-hint);
+  flex-shrink: 0;
+}
+
+/* ── Detail row ── */
+.detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 20px 28px 0;
+  align-items: stretch;
+}
+.detail-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #F0EDE9;
+  border-radius: 10px;
+  padding: 11px 16px;
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 600;
+  border: 1.5px solid rgba(26,18,25,0.1);
+  min-height: 50px;
+  flex: 1;
+  min-width: 0;
+  justify-content: center;
+}
+.detail-chip .chi { font-size: 16px; flex-shrink: 0; }
+.detail-chip.price-chip {
+  background: rgba(92,26,58,0.08);
+  border-color: rgba(92,26,58,0.22);
+  color: var(--bordeaux);
+  font-weight: 700;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  min-height: auto;
+  padding: 12px 16px;
+  flex: 0 0 auto;
+  justify-content: flex-start;
+}
+.detail-chip.price-chip .chi { align-self: flex-start; }
+.price-chip-row { display: flex; align-items: center; gap: 8px; width: 100%; }
+.price-chip-main { font-size: 15px; font-weight: 700; color: var(--bordeaux); }
+.price-chip-alt { font-size: 13px; font-weight: 600; color: var(--teal-dark); }
+.price-chip-sep { color: var(--text-hint); font-weight: 400; font-size: 13px; }
+
+/* ── Description text (v1 format note) ── */
+.format-desc {
+  margin: 16px 28px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.65;
+  background: #F0EDE9;
+  border-radius: 10px;
+  padding: 14px 18px;
+  border-left: 3px solid var(--bordeaux);
+}
+
+/* ── Price note (small italic) ── */
+.price-note {
+  margin: 10px 28px 0;
+  font-size: 12px;
+  color: var(--text-hint);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ── Teacher badge ── */
+.teacher-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(92,26,58,0.07);
+  border: 1.5px solid rgba(92,26,58,0.25);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}
+
+/* ══ COURSE CARDS (nested inside v2) ══ */
+.courses-list {
+  padding: 20px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.courses-list-label {
+  font-family: var(--font-head);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-hint);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.courses-list-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.course-item {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1.5px solid rgba(43,191,191,0.2);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.course-item:hover {
+  border-color: rgba(43,191,191,0.4);
+  box-shadow: 0 2px 16px rgba(43,191,191,0.1);
+}
+
+.course-item-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(43,191,191,0.06);
+  transition: background 0.15s;
+}
+.course-item-header:hover { background: rgba(43,191,191,0.1); }
+
+.course-item-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.course-item-title-wrap { flex: 1; }
+.course-item-title {
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  margin-bottom: 2px;
+}
+.course-item-sub {
+  font-size: 12px;
+  color: var(--teal-dark);
+  font-weight: 600;
+}
+.course-item-toggle {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: rgba(43,191,191,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal-dark);
+  font-size: 14px;
+  transition: background 0.15s, transform 0.3s cubic-bezier(0.22,1,0.36,1);
+  flex-shrink: 0;
+}
+.course-item.open .course-item-toggle {
+  transform: rotate(90deg);
+  background: rgba(43,191,191,0.2);
+}
+
+.course-item-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.38s cubic-bezier(0.22,1,0.36,1);
+  background: var(--white);
+}
+.course-item.open .course-item-body {
+  grid-template-rows: 1fr;
+}
+.course-item-body-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.course-item-desc {
+  padding: 18px 20px 0;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.course-sections {
+  padding: 16px 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.course-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal-dark);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.course-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(43,191,191,0.2);
+}
+.course-section-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.course-section-list li {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.6;
+}
+.course-section-list li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-weight: 700;
+}
+
+.course-result-box {
+  margin: 16px 20px 20px;
+  background: rgba(43,191,191,0.07);
+  border-left: 3px solid var(--teal);
+  border-radius: 0 10px 10px 0;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--teal-dark);
+  line-height: 1.65;
+}
+.course-result-box strong { font-weight: 700; }
+
+/* Video inside course */
+.course-video-wrap {
+  padding: 0 20px 20px;
+}
+.course-video-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-hint);
+  margin-bottom: 10px;
+}
+.video-ratio {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #EEEAE7;
+  border: 1px solid var(--border);
+}
+.video-ratio iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.video-ph {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-hint);
+  gap: 8px;
+}
+.video-ph-icon { font-size: 32px; opacity: 0.4; }
+.video-ph-text { font-size: 12px; }
+.video-ph-hint { font-size: 11px; opacity: 0.6; }
+
+/* ══ FORM SECTION ══ */
+.form-section {
+  margin-top: 56px;
+  border-top: 1px solid var(--border);
+  padding-top: 48px;
+}
+.form-header {
+  margin-bottom: 28px;
+}
+.form-title {
+  font-family: var(--font-head);
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.form-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 540px;
+}
+.form-ph {
+  min-height: 280px;
+  background: var(--white);
+  border: 1.5px dashed rgba(26,18,25,0.12);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-hint);
+  padding: 40px;
+  text-align: center;
+}
+.form-ph-icon { font-size: 32px; opacity: 0.45; }
+.form-ph-text { font-size: 14px; font-weight: 500; }
+.form-ph-hint { font-size: 12px; opacity: 0.65; line-height: 1.5; }
+.form-closing {
+  margin-top: 24px;
+  padding: 20px 24px;
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* ══ FOOTER ══ */
+.site-footer {
+  background: var(--bordeaux-dark);
+  padding: 28px 48px;
+  text-align: center;
+}
+.footer-logo {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.1em;
+  margin-bottom: 7px;
+}
+.footer-text {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.6;
+}
+.footer-text a { color: rgba(255,255,255,0.55); text-decoration: none; }
+
+/* ══ ANIMATIONS ══ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.au  { animation: fadeUp 0.55s cubic-bezier(0.22,1,0.36,1) both; }
+.au1 { animation-delay: 0.05s; }
+.au2 { animation-delay: 0.12s; }
+.au3 { animation-delay: 0.18s; }
+@media (prefers-reduced-motion: reduce) { .au { animation: none !important; opacity: 1 !important; } }
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 640px) {
+  .site-header { padding: 16px 20px; }
+  .hero-text { padding: 28px 0 36px; }
+  .hero-photo { max-height: 260px; }
+  .hero-photo img { height: 260px; object-position: center 15%; }
+  .hero-photo-placeholder { height: 200px; }
+  .hero-inner { padding: 0 20px; }
+  .main-wrap { padding: 32px 20px 60px; }
+  .variant-header { padding: 18px 18px; gap: 10px; }
+  .schedule-strip { flex-direction: column; }
+  .sched-block.spec { margin-left: 0; margin-top: 8px; }
+  .sched-plus { writing-mode: horizontal-tb; transform: none; padding: 4px 0; justify-content: center; font-size: 16px; }
+  .detail-row { padding: 14px 18px 0; }
+  .format-desc { margin: 14px 18px 20px; }
+  .courses-list { padding: 16px 18px 20px; }
+  .course-item-desc { padding: 14px 16px 0; }
+  .course-sections { padding: 12px 16px 0; }
+  .course-result-box { margin: 12px 16px 16px; }
+  .course-video-wrap { padding: 0 16px 16px; }
+  .site-footer { padding: 24px 20px; }
+  .variant-num { writing-mode: horizontal-tb; transform: none; font-size: 9px; }
+  .form-section { margin-top: 40px; padding-top: 36px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <div class="header-logo">
+    AB ROAD STUDIO
+    <span>Английский язык</span>
+  </div>
+  <div class="header-year">2025 / 2026</div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+
+  <div class="hero-photo">
+    <img src="hero-photo.jpg" alt="AB Road Studio" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="hero-photo-placeholder" style="display:none;"><span>🖼</span> Добавьте hero-photo.jpg в папку</div>
+    <div class="hero-photo-overlay"></div>
+  </div>
+
+  <div class="hero-text">
+    <div class="hero-inner">
+      <div class="hero-label au">Специально для старших групп</div>
+      <h1 class="hero-title au au1">Выбор на следующий<br><em>год обучения</em></h1>
+      <p class="hero-body-text au au2">
+        Дети выросли, интересы меняются — и учить только General English становится скучно.
+        Мы предлагаем <strong>два варианта</strong> на следующий год: продолжить в привычном формате или добавить новый спецкурс.
+      </p>
+      <div class="hero-why au au3">
+        <div class="hero-why-title">Почему это важно?</div>
+        <ul class="hero-why-list">
+          <li>Язык можно будет сразу «пощупать» — не только учебники, но и реальные темы</li>
+          <li>Дополнительная практика говорения и аудирования каждую неделю</li>
+          <li>Новый контекст и интерес — ребята видят, зачем им английский прямо сейчас</li>
+          <li>Больше разнообразия и живого общения в группе</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══ MAIN ══ -->
+<main class="main-wrap">
+
+  <div class="section-eyebrow au">Выберите формат обучения</div>
+
+  <!-- ───────────────────────────
+       ВАРИАНТ 1
+  ─────────────────────────────── -->
+  <div class="variant-card v1 au au1 open" id="v1">
+
+    <div class="variant-header" onclick="toggleVariant('v1')">
+      <div class="variant-num">01</div>
+      <div class="variant-title-col">
+        <div class="variant-tag" style="color:var(--teal);">Вариант первый</div>
+        <div class="variant-name">Групповой формат</div>
+      </div>
+      <div class="variant-price-col">
+        <div class="variant-price-label" style="color:rgba(43,191,191,0.7);">в месяц</div>
+        <div class="variant-price-amount" style="color:var(--teal);">4 600 ₽</div>
+      </div>
+      <div class="variant-toggle">›</div>
+    </div>
+
+    <div class="variant-body">
+      <div class="variant-body-inner">
+
+        <div class="schedule-strip">
+          <div class="sched-block ge">
+            <div class="sched-block-label">General English</div>
+            <div class="sched-block-name">Групповые занятия</div>
+            <div class="sched-block-time">90 минут · 1 раз в неделю</div>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <div class="detail-chip"><span class="chi">📅</span> 1 раз в неделю</div>
+          <div class="detail-chip"><span class="chi">⏱</span> 90 минут · занятие</div>
+          <div class="detail-chip"><span class="chi">👤</span> Группа до 8 человек</div>
+          <div class="detail-chip price-chip">
+            <div class="price-chip-row"><span class="chi">💳</span><span class="price-chip-main">4 600 ₽ · месяц</span></div>
+          </div>
+        </div>
+
+        <div class="format-desc">
+          Продолжение текущего формата — General English по той же программе, тот же ритм занятий.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────────────────────
+       ВАРИАНТ 2
+  ─────────────────────────────── -->
+  <div class="variant-card v2 au au2 open" id="v2">
+
+    <div class="variant-header" onclick="toggleVariant('v2')">
+      <div class="variant-num">02</div>
+      <div class="variant-title-col">
+        <div class="variant-tag">Вариант второй</div>
+        <div class="variant-name">General English + Спецкурс</div>
+      </div>
+      <div class="variant-price-col">
+        <div class="variant-price-label">в месяц</div>
+        <div class="variant-price-amount">от 7 600 ₽</div>
+      </div>
+      <div class="variant-toggle">›</div>
+    </div>
+
+    <div class="variant-body">
+      <div class="variant-body-inner">
+
+        <div class="detail-row">
+          <div class="detail-chip"><span class="chi">📅</span> 2 раза в неделю</div>
+          <div class="detail-chip"><span class="chi">⏱</span> 60 + 90 мин</div>
+          <div class="detail-chip"><span class="chi">👤</span> Группа 4–8 человек</div>
+          <div class="detail-chip price-chip">
+            <div class="price-chip-row">
+              <span class="chi">💳</span>
+              <span class="price-chip-main">9 700 ₽</span>
+              <span class="price-chip-sep">(4 чел.)</span>
+              <span class="price-chip-sep">/</span>
+              <span class="price-chip-alt">7 600 ₽</span>
+              <span class="price-chip-sep">(5+)</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="price-note">
+          Стоимость зависит от формата: мини-группа (4 чел.) или стандартная (5+). Финальная сумма будет рассчитана после формирования групп.
+        </p>
+
+        <div class="format-desc">
+          Один час в неделю ребята занимаются <strong>General English</strong> по пособиям — так же, как это было в предыдущие годы. Полтора часа в неделю уделяют спецкурсу на выбор: Страноведению или Читательскому клубу.
+        </div>
+
+        <div class="schedule-strip">
+          <div class="sched-block ge">
+            <div class="sched-block-label">General English</div>
+            <div class="sched-block-name">Групповые занятия</div>
+            <div class="sched-block-time">60 минут · 1 раз в неделю</div>
+          </div>
+          <div class="sched-plus">+</div>
+          <div class="sched-block spec">
+            <div class="sched-block-label">Спецкурс на выбор</div>
+            <div class="sched-block-name">Страноведение или<br>Читательский клуб</div>
+            <div class="sched-block-time">90 минут · 1 раз в неделю</div>
+          </div>
+        </div>
+
+        <!-- Спецкурсы -->
+        <div class="courses-list">
+          <div class="courses-list-label">Спецкурс на выбор</div>
+
+          <!-- Страноведение -->
+          <div class="course-item" id="c1">
+            <div class="course-item-header" onclick="toggleCourse('c1')">
+              <div class="course-item-icon">🌍</div>
+              <div class="course-item-title-wrap">
+                <div class="course-item-title">Страноведение</div>
+                <div class="course-item-sub">Путешествуем по миру через английский</div>
+                <div class="teacher-badge">Natalie</div>
+              </div>
+              <div class="course-item-toggle">›</div>
+            </div>
+            <div class="course-item-body">
+              <div class="course-item-body-inner">
+
+                <p class="course-item-desc">
+                  Мы берём одну страну в неделю и весь час разбираемся, как там живут люди. История, культура, быт, политика, природа, еда, знаменитые люди — всё это помогает ребятам не только учить язык, но и по-настоящему узнавать мир. Занятия живые и практические: смотрим видео из местных новостей, обсуждаем цены на жизнь, слушаем интервью с жителями.
+                </p>
+
+                <div class="course-sections">
+                  <div>
+                    <div class="course-section-title">На уроке</div>
+                    <ul class="course-section-list">
+                      <li>Ищем страну на карте, вспоминаем географию и историю</li>
+                      <li>Смотрим видео о жизни в столице, интервью с местными</li>
+                      <li>Обсуждаем культурные различия, традиции, правила этикета</li>
+                      <li>Пробуем готовить традиционные блюда (разбираем рецепт на английском)</li>
+                      <li>Берём интервью у одноклассника — роли туриста и местного жителя</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div class="course-section-title">Домашнее задание</div>
+                    <ul class="course-section-list">
+                      <li>До урока: подготовить информацию о стране (где находится, знаменитости)</li>
+                      <li>После урока: эссе о плюсах и минусах жизни в этой стране</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="course-result-box">
+                  <strong>Результат:</strong> ребёнок научится говорить о странах уверенно, понимать культурные различия, слышать живую речь. Язык станет окном в мир, а не просто упражнениями в учебнике.
+                </div>
+
+                <div class="course-video-wrap">
+                  <div class="course-video-label">Видео о курсе</div>
+                  <div class="video-ratio">
+                    <iframe src="https://rutube.ru/play/embed/a52ecbb61b3d50e92f688d19f528777e/?p=VB-Ue27gi2cgNrgg6GqS3g" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Читательский клуб -->
+          <div class="course-item" id="c2">
+            <div class="course-item-header" onclick="toggleCourse('c2')">
+              <div class="course-item-icon">📖</div>
+              <div class="course-item-title-wrap">
+                <div class="course-item-title">Читательский клуб</div>
+                <div class="course-item-sub">Большие истории на английском</div>
+                <div class="teacher-badge">Kate</div>
+              </div>
+              <div class="course-item-toggle">›</div>
+            </div>
+            <div class="course-item-body">
+              <div class="course-item-body-inner">
+
+                <p class="course-item-desc">
+                  Берём классическую или современную книгу на английском, читаем вместе (часть на уроке, часть дома) и обсуждаем. Мы слушаем аудиокнигу параллельно с текстом, смотрим фрагменты киноадаптаций, разбираем новые слова. Ребёнок понимает: английский живёт не только в учебнике — его можно читать в книгах, слышать в фильмах.
+                </p>
+
+                <div class="course-sections">
+                  <div>
+                    <div class="course-section-title">На уроке</div>
+                    <ul class="course-section-list">
+                      <li>Разбираем новую лексику из прочитанной части</li>
+                      <li>Обсуждаем сюжет, персонажей, мотивы поступков</li>
+                      <li>Слушаем аудиокнигу вместе — погружение в живую речь</li>
+                      <li>Смотрим отрывок из фильма по книге, обсуждаем различия</li>
+                      <li>Говорим о темах, поднятых в произведении</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div class="course-section-title">Домашнее задание</div>
+                    <ul class="course-section-list">
+                      <li>Прочитать следующую главу, найти незнакомые слова</li>
+                      <li>Дополнительные материалы — в специальный чат (аудио, вопросы)</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="course-result-box">
+                  <strong>Результат:</strong> ребёнок начнёт читать книги на английском без страха, услышит живую речь актёров в оригинале, сможет смотреть фильмы без перевода.
+                </div>
+
+                <div class="course-video-wrap">
+                  <div class="course-video-label">Видео о курсе</div>
+                  <div class="video-ratio">
+                    <iframe src="https://rutube.ru/play/embed/e57d57eff76bca08d3ad77d019e7e967" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /courses-list -->
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ФОРМА ══ -->
+  <section class="form-section au">
+    <div class="form-header">
+      <h2 class="form-title">Уважаемые родители,</h2>
+      <p class="form-sub">Ответьте, пожалуйста, на вопрос о продолжении обучения в следующем году. В каком формате вы планируете продолжать обучение?<br><br>
+      <strong>Необходимо ответить до 9 мая.</strong></p>
+    </div>
+
+    <!--
+      КАК ДОБАВИТЬ ФОРМУ:
+      1. Создайте форму в Яндекс.Формах
+      2. «Поделиться» → «Встроить» → скопируйте iframe
+      3. Замените блок form-ph на:
+         <iframe src="https://forms.yandex.ru/u/XXXX/iframe/" frameborder="0" width="100%" height="700"></iframe>
+    -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKe6b57gDqjgfhJAYgzkS1mPFAQsdJDpMFGV9SApxhO8zhAg/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" style="border-radius:14px; border: 1px solid var(--border);">Загрузка…</iframe>
+
+    <div class="form-closing">
+      Если у вас есть вопросы — пожалуйста, переходите в личные сообщения. Мы всегда готовы ответить на ваш вопрос.
+    </div>
+  </section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="footer-logo">AB ROAD STUDIO</div>
+  <p class="footer-text">
+    Есть вопросы? Напишите нам<br>
+    <!-- <a href="https://wa.me/7XXXXXXXXXX">WhatsApp</a> · <a href="mailto:info@abroadstudio.ru">почта</a> -->
+  </p>
+</footer>
+
+<script>
+function toggleVariant(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+function toggleCourse(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+</script>
+</body>
+</html>
