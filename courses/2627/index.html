@@ -424,9 +424,9 @@ body {
 }
 .detail-chip.price-chip .chi { align-self: flex-start; }
 .price-chip-row { display: flex; align-items: center; gap: 8px; width: 100%; }
-.price-chip-main { font-size: 15px; font-weight: 700; color: var(--bordeaux); }
-.price-chip-alt { font-size: 13px; font-weight: 600; color: var(--teal-dark); }
-.price-chip-sep { color: var(--text-hint); font-weight: 400; font-size: 13px; }
+.price-chip-main { font-size: 14px; font-weight: 700; color: var(--bordeaux); }
+.price-chip-alt { font-size: 14px; font-weight: 700; color: var(--teal-dark); }
+.price-chip-sep { color: var(--text-hint); font-weight: 400; font-size: 12px; }
 
 /* ── Description text (v1 format note) ── */
 .format-desc {
@@ -454,16 +454,16 @@ body {
 .teacher-badge {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
   background: rgba(92,26,58,0.09);
   border: 2px solid rgba(92,26,58,0.3);
   border-radius: 20px;
-  padding: 6px 16px;
-  font-size: 14px;
+  padding: 5px 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--bordeaux);
-  margin-top: 8px;
   letter-spacing: 0.04em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* ══ COURSE CARDS (nested inside v2) ══ */
@@ -679,8 +679,7 @@ body {
 /* ══ FORM SECTION ══ */
 .form-section {
   margin-top: 56px;
-  border-top: 1px solid var(--border);
-  padding-top: 48px;
+  padding-top: 12px;
 }
 .form-header {
   margin-bottom: 28px;
@@ -691,20 +690,6 @@ body {
   overflow: hidden;
   background: #fff;
   box-shadow: 0 2px 16px rgba(26,18,25,0.06);
-}
-.form-iframe-clip {
-  /* clip синюю полосу сверху и дисклеймер снизу */
-  height: 260px;
-  overflow: hidden;
-  position: relative;
-}
-.form-iframe-clip iframe {
-  position: absolute;
-  top: -10px;
-  left: 0;
-  width: 100%;
-  height: 400px;
-  border: none;
 }
 .form-title {
   font-family: var(--font-head);
@@ -814,9 +799,7 @@ body {
   .site-footer { padding: 24px 20px; }
   .variant-num { writing-mode: horizontal-tb; transform: none; font-size: 9px; }
   .form-section { margin-top: 40px; padding-top: 36px; }
-  /* форма на мобильном: достаточно высокая, чтобы кнопка «Далее» была видна */
-  .form-iframe-clip { height: 520px; }
-  .form-iframe-clip iframe { height: 640px; }
+  .form-iframe-outer iframe { height: 600px; }
 }
 </style>
 </head>
@@ -845,16 +828,17 @@ body {
       <div class="hero-label au">Старшие группы</div>
       <h1 class="hero-title au au1">Варианты продолжения<br><em>обучения</em></h1>
       <p class="hero-body-text au au2">
-        Дети растут, и их интересы меняются. Для кого-то изучение только общего английского может стать привычным и, возможно, скучным. Для кого-то General English достаточно, а кому-то становится мало — и это абсолютно нормально. Чем старше ребята, тем ярче проявляются такие различия.<br><br>
-        Поэтому на следующий год мы предлагаем вам <strong>два варианта</strong>, чтобы каждый нашёл то, что подходит именно ему.
+        Дети растут, и их интересы меняются. Для кого-то General English вполне достаточно: привычный ритм, комфортный темп, поддержание уровня. Для других со временем хочется больше и шире.<br><br>
+        И то, и другое абсолютно нормально. Чем старше ребята, тем ярче проявляются эти различия.<br><br>
+        Поэтому на следующий год мы предлагаем вам два варианта — чтобы каждый нашёл то, что подходит именно ему.
       </p>
       <div class="hero-why au au3">
         <div class="hero-why-title">Почему это важно?</div>
         <ul class="hero-why-list">
-          <li>Язык можно будет сразу «пощупать» — не только учебники, но и реальные темы</li>
+          <li>Поддержание накопленных навыков на высоком уровне — привычный ритм и комфортный темп занятий</li>
+          <li>Язык можно будет сразу «пощупать» — не только в учебниках, но и в реальных темах</li>
           <li>Дополнительная практика говорения и аудирования в нативном формате, в живом соприкосновении с языком</li>
           <li>Новый контекст и интерес — ребята видят, зачем им английский прямо сейчас</li>
-          <li>Для тех, кто выбирает General English: мы понимаем важность этого пути — и это абсолютно окей</li>
         </ul>
       </div>
     </div>
@@ -906,7 +890,7 @@ body {
         </div>
 
         <div class="format-desc">
-          Продолжение знакомого формата — General English с той же командой, в привычном ритме занятий.
+          Продолжение знакомого формата General English в привычном ритме — с учётом всего накопленного опыта вашего ребёнка и обновлёнными материалами.
         </div>
 
       </div>
@@ -949,7 +933,7 @@ body {
         </p>
 
         <div class="format-desc">
-          Один час в неделю ребята занимаются <strong>General English</strong> по пособиям — так же, как это было в предыдущие годы. Полтора часа в неделю уделяют спецкурсу на выбор: Страноведению или Читательскому клубу.
+          Полтора часа в неделю ребята уделяют спецкурсу на выбор.
         </div>
 
         <div class="schedule-strip">
@@ -977,8 +961,8 @@ body {
               <div class="course-item-title-wrap">
                 <div class="course-item-title">Читательский клуб</div>
                 <div class="course-item-sub">Большие истории на английском</div>
-                <div class="teacher-badge">Kate</div>
               </div>
+              <div class="teacher-badge">Kate</div>
               <div class="course-item-toggle">›</div>
             </div>
             <div class="course-item-body">
@@ -1030,8 +1014,8 @@ body {
               <div class="course-item-title-wrap">
                 <div class="course-item-title">Страноведение</div>
                 <div class="course-item-sub">Путешествуем по миру через английский</div>
-                <div class="teacher-badge">Nataly</div>
               </div>
+              <div class="teacher-badge">Nataly</div>
               <div class="course-item-toggle">›</div>
             </div>
             <div class="course-item-body">
@@ -1087,9 +1071,7 @@ body {
     <div class="section-eyebrow">Продолжение обучения в следующем году</div>
 
     <div class="form-iframe-outer">
-      <div class="form-iframe-clip">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKe6b57gDqjgfhJAYgzkS1mPFAQsdJDpMFGV9SApxhO8zhAg/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
-      </div>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKe6b57gDqjgfhJAYgzkS1mPFAQsdJDpMFGV9SApxhO8zhAg/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0" style="display:block;">Загрузка…</iframe>
     </div>
   </section>
 
