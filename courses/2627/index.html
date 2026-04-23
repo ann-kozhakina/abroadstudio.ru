@@ -610,9 +610,10 @@ body {
 }
 
 .course-item-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   padding: 16px 20px;
   cursor: pointer;
   user-select: none;
@@ -632,7 +633,7 @@ body {
   font-size: 18px;
   flex-shrink: 0;
 }
-.course-item-title-wrap { flex: 1; }
+.course-item-title-wrap { flex: 1; min-width: 0; }
 .course-item-title {
   font-family: var(--font-head);
   font-size: 13px;
@@ -658,6 +659,7 @@ body {
   line-height: 1;
   transition: background 0.15s, transform 0.3s cubic-bezier(0.22,1,0.36,1);
   flex-shrink: 0;
+  margin-left: auto;
 }
 .course-item.open .course-item-toggle {
   transform: rotate(180deg);
@@ -913,8 +915,7 @@ body {
   .price-note { padding: 8px 16px; }
   .format-desc { margin: 14px 16px 20px; }
   .courses-list { padding: 16px 16px 20px; }
-  /* шапка курса — flex-wrap: nowrap чтобы стрелка не падала */
-  .course-item-header { gap: 8px; padding: 14px 16px; flex-wrap: nowrap; }
+  .course-item-header { gap: 8px; padding: 14px 16px; }
   .teacher-badge { padding: 4px 10px; font-size: 12px; }
   .course-item-desc { padding: 14px 16px 0; }
   .course-sections { padding: 12px 16px 0; grid-template-columns: 1fr; gap: 14px; }
