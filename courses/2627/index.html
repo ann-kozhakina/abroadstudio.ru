@@ -501,8 +501,9 @@ body {
 }
 .sched-box-split {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto auto auto;
   align-items: stretch;
+  justify-content: start;
 }
 .sched-box-col {
   padding: 15px 18px;
@@ -742,7 +743,7 @@ body {
 
 /* Video inside course */
 .course-video-wrap {
-  padding: 0 20px 20px;
+  padding: 16px 20px 20px;
 }
 .course-video-label {
   font-size: 10px;
@@ -838,38 +839,6 @@ body {
   line-height: 1.75;
 }
 
-/* ══ STICKY CTA ══ */
-.sticky-cta {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--bordeaux);
-  color: #fff;
-  font-family: var(--font-head);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  padding: 13px 28px;
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 999;
-  white-space: nowrap;
-}
-.sticky-cta.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-@media (max-width: 640px) {
-  .sticky-cta {
-    display: block;
-  }
-}
 
 /* ══ FOOTER ══ */
 .site-footer {
@@ -938,14 +907,19 @@ body {
   .price-chip-row { flex: 1; }
   .detail-chip .chi { font-size: 14px; }
   .variant-name { letter-spacing: 0.01em; }
-  /* шапка курса — меньше gap чтобы стрелка не выпадала */
-  .course-item-header { gap: 8px; padding: 14px 16px; }
+  /* единый отступ 16px для всего содержимого курсов */
+  .sched-box { margin: 16px 16px 14px; }
+  .price-section { padding: 0 16px 4px; }
+  .price-note { padding: 8px 16px; }
   .format-desc { margin: 14px 16px 20px; }
   .courses-list { padding: 16px 16px 20px; }
+  /* шапка курса — flex-wrap: nowrap чтобы стрелка не падала */
+  .course-item-header { gap: 8px; padding: 14px 16px; flex-wrap: nowrap; }
+  .teacher-badge { padding: 4px 10px; font-size: 12px; }
   .course-item-desc { padding: 14px 16px 0; }
   .course-sections { padding: 12px 16px 0; grid-template-columns: 1fr; gap: 14px; }
   .course-result-box { margin: 12px 16px 16px; }
-  .course-video-wrap { padding: 0 16px 16px; }
+  .course-video-wrap { padding: 12px 16px 16px; }
   .site-footer { padding: 24px 20px; }
   .variant-num { writing-mode: horizontal-tb; transform: none; font-size: 9px; }
   .form-section { margin-top: 40px; padding-top: 36px; }
@@ -1227,8 +1201,6 @@ body {
   </p>
 </footer>
 
-<!-- Sticky CTA (mobile only) -->
-<a class="sticky-cta" href="#form-section">Перейти к форме →</a>
 
 <script>
 function toggleVariant(id) {
@@ -1240,21 +1212,6 @@ function toggleCourse(id) {
 
 // Оба варианта свёрнуты по умолчанию на всех устройствах
 
-// Sticky CTA: show after hero scrolls out of view
-(function() {
-  var cta = document.querySelector('.sticky-cta');
-  var hero = document.querySelector('.hero');
-  if (!cta || !hero) return;
-  function updateCta() {
-    var heroBottom = hero.getBoundingClientRect().bottom;
-    if (heroBottom < 0) {
-      cta.classList.add('visible');
-    } else {
-      cta.classList.remove('visible');
-    }
-  }
-  window.addEventListener('scroll', updateCta, { passive: true });
-  updateCta();
 })();
 </script>
 </body>
