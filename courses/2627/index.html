@@ -314,12 +314,17 @@ body {
   color: rgba(255,255,255,0.7);
   font-size: 16px;
   line-height: 1;
-  transition: background 0.15s, transform 0.35s cubic-bezier(0.22,1,0.36,1);
+  transition: background 0.15s;
   flex-shrink: 0;
+}
+.variant-card:not(.open) .variant-toggle {
+  animation: bounceHint 3s ease 0.8s infinite;
 }
 .variant-card.open .variant-toggle {
   transform: rotate(180deg);
   background: rgba(255,255,255,0.18);
+  animation: none;
+  transition: background 0.15s, transform 0.35s cubic-bezier(0.22,1,0.36,1);
 }
 
 /* ── Card body (collapsible) ── */
