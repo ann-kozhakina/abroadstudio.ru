@@ -657,13 +657,15 @@ body {
   color: var(--teal-dark);
   font-size: 13px;
   line-height: 1;
-  transition: background 0.15s, transform 0.3s cubic-bezier(0.22,1,0.36,1);
+  transition: background 0.15s;
   flex-shrink: 0;
   margin-left: auto;
 }
 .course-item.open .course-item-toggle {
   transform: rotate(180deg);
   background: rgba(43,191,191,0.2);
+  animation: none;
+  transition: background 0.15s, transform 0.3s cubic-bezier(0.22,1,0.36,1);
 }
 
 .course-item-body {
