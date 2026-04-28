@@ -546,6 +546,9 @@ body {
 .price-section-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
 }
+.price-section-grid-3 {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+}
 .price-section-cell {
   background: rgba(26,18,25,0.03);
   border-radius: 10px; padding: 10px 14px;
@@ -946,6 +949,7 @@ body {
   /* единый отступ 16px для всего содержимого курсов */
   .sched-box { margin: 16px 16px 14px; }
   .price-section { padding: 0 16px 4px; }
+  .price-section-grid-3 { grid-template-columns: 1fr; }
   .price-note { padding: 8px 16px; }
   .format-desc { margin: 14px 16px 20px; }
   .courses-list { padding: 16px 16px 20px; }
@@ -1015,8 +1019,8 @@ body {
         <div class="variant-name">General English</div>
       </div>
       <div class="variant-price-col">
-        <div class="variant-price-label" style="color:rgba(43,191,191,0.7);">в месяц</div>
-        <div class="variant-price-amount" style="color:var(--teal);">4 600 ₽</div>
+        <div class="variant-price-label">в месяц</div>
+        <div class="variant-price-amount" style="color:var(--teal);">от 4 600 ₽</div>
       </div>
       <div class="variant-toggle">∨</div>
     </div>
@@ -1033,16 +1037,29 @@ body {
 
         <div class="price-section">
           <div class="price-section-label">Стоимость в месяц</div>
-          <div class="price-section-grid">
+          <div class="price-section-grid-3">
             <div class="price-section-cell">
-              <div class="price-section-cell-tier">5–9 человек</div>
+              <div class="price-section-cell-tier">Стандартная · 5–9 чел.</div>
               <div class="price-section-cell-num">4 600 ₽</div>
+            </div>
+            <div class="price-section-cell">
+              <div class="price-section-cell-tier">4 человека</div>
+              <div class="price-section-cell-num">6 600 ₽</div>
+            </div>
+            <div class="price-section-cell">
+              <div class="price-section-cell-tier">Мини · 2–3 чел.</div>
+              <div class="price-section-cell-num">7 200 ₽</div>
             </div>
           </div>
         </div>
 
+        <p class="price-note">
+          Финальная стоимость зависит от размера группы и будет рассчитана после её формирования.
+        </p>
+
         <div class="format-desc">
-          Продолжение группового формата General English в привычном ритме. Поддержание накопленных навыков на высоком уровне: привычный ритм и комфортный темп занятий.
+          Продолжение группового формата General English в привычном ритме. Поддержание накопленных навыков на высоком уровне: привычный ритм и комфортный темп занятий.<br><br>
+          Внутреннее тестирование студии сдаётся <strong>два раза за год</strong>strong>, осенью и весной.
         </div>
 
       </div>
@@ -1062,7 +1079,7 @@ body {
       </div>
       <div class="variant-price-col">
         <div class="variant-price-label">в месяц</div>
-        <div class="variant-price-amount">от 7 600 ₽</div>
+        <div class="variant-price-amount">от 7 700 ₽</div>
       </div>
       <div class="variant-toggle">∨</div>
     </div>
@@ -1086,22 +1103,23 @@ body {
           <div class="price-section-label">Стоимость в месяц</div>
           <div class="price-section-grid">
             <div class="price-section-cell">
-              <div class="price-section-cell-tier">Мини-группа · 4 чел.</div>
-              <div class="price-section-cell-num">9 700 ₽</div>
+              <div class="price-section-cell-tier">Стандартная · 5–9 чел.</div>
+              <div class="price-section-cell-num">7 700 ₽</div>
             </div>
             <div class="price-section-cell">
-              <div class="price-section-cell-tier">Стандартная · 5–9 чел.</div>
-              <div class="price-section-cell-num">7 600 ₽</div>
+              <div class="price-section-cell-tier">4 человека</div>
+              <div class="price-section-cell-num">11 000 ₽</div>
             </div>
           </div>
         </div>
 
         <p class="price-note">
-          Стоимость зависит от формата: мини-группа (4 чел.) или стандартная (5+). Финальная сумма будет рассчитана после формирования групп.
+          Финальная стоимость занятий зависит от размера группы и будет рассчитана после формирования списков.
         </p>
 
         <div class="format-desc">
-          Один час в неделю ребята занимаются General English, и полтора часа — спецкурсом.
+          Один час в неделю ребята занимаются General English, и полтора часа — спецкурсом.<br><br>
+          Внутреннее тестирование студии сдаётся <strong>один раз в год,</strong>strong> весной.
         </div>
 
         <!-- Спецкурсы -->
